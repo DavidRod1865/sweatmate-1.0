@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow: scroll;
+}
+
+body {
+    background: #a8c0ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(45deg, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    overflow: scroll;
+}
+
+
+h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin: 50px 0;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+    background-color: #eee;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .searchfield {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+        #searchbar, .workoutDate {
+            height: 45px;
+        	padding: 0.5rem 2rem;
+            border: 1px solid #ccc;
+        	border-radius: 10px;
+            outline: none;
+        }
+
+            #searchbar{
+                margin-bottom: 1.5rem;
+            }
+
+            #searchbar[type=text] {
+        	    width: 60%;
+        	    -webkit-transition: width 0.25s ease-in-out;
+        	    transition: width 0.25s ease-in-out;
+            }
+
+            /* When the input field gets focus, change its width to 100% */
+            #searchbar[type=text]:focus {
+        	    width: 90%;
+            }
+
+            .workoutDate::-webkit-datetime-edit-text {
+                color: purple
+            }
+
+            .workoutDate {
+                color: gray;
+                margin: 1rem;
+            }
+
+    .output {
+        width: 100%;
+        max-height: 50vh;
+        overflow: scroll;
+    }
+
+    .output:empty:after {
+        content: "Write a workout above!";
+    }
+
+        .workout {
+            list-style: none;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        li {
+            background-color: white;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+            transition: all .2s;
+            list-style: none;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li:hover {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .noExercise {
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            border-left: 5px solid red;
+            background-color: pink;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        
+        
+    .button-47 {
+        align-items: center;
+        background: #FFFFFF;
+        border: 0 solid #E2E8F0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-sizing: border-box;
+        color: #1A202C;
+        display: inline-flex;
+        font-family: Inter, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        height: 56px;
+        justify-content: center;
+        line-height: 24px;
+        overflow-wrap: break-word;
+        padding: 24px;
+        text-decoration: none;
+        width: auto;
+        border-radius: 8px;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        /* .completed{
+            text-decoration: line-through;
+            color: gray;
+        }
+        .not{
+            text-decoration: underline;
+        } */
+
+    /* .workout-list {
+	    font-size: 1.5em;
+	    margin-left: 90px;
+    }
+
+    .workout{
+    display: none;	
+    } */

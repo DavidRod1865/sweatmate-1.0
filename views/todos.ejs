@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+    <h1>Workouts</h1>
+    <ul>
+    <% todos.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span class='del'> Delete </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <!-- <h2><%= user.userName %> has <%= left %> things left to do.</h2> -->
+    
+    <div class="container">
+        <button class="addworkout button-47">Add Workout</button>
+        <div class="searchfield">
+            <input type="date" name="workout-date" class="workoutDate">
+            <input id="searchbar" type="text" name="search" placeholder="Search for a Workout">
+            <div class="output"></div>
+        </div>
+        <button class='button-47'><input type="submit" name="submit" class="submit"></button>
+    </div>
+
+    <form action="/todos/createTodo" method='POST'>
+
+        <!-- Date of Workout -->
+
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        
+
+    </form>
+
+    <a href="/logout">Logout</a>
+
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/workout.js"></script>
+</body>
+</html>
+
+  <!-- List of Workouts -->
+            <!-- <ul class="workout_list">
+            <li class="workout">Bench Press</li>
+                <li class="workout">Bar Dip</li>
+                <li class="workout">Cable Chest Press</li>
+                <li class="workout">Close Grip Bench Press</li>
+                <li class="workout">Decline Bench Press</li>
+                <li class="workout">Dumbbell Chest Fly</li>
+                <li class="workout">Dumbbell Chest Press</li>
+                <li class="workout">Dumbbell Floor Press</li>
+                <li class="workout">Dumbbell Pullover</li>
+                <li class="workout">Floor Press</li>
+                <li class="workout">Incline Bench Press</li>
+                <li class="workout">Incline Dumbbell Press</li>
+                <li class="workout">Machine Chest Fly</li>
+                <li class="workout">Machine Chest Press</li>
+                <li class="workout">Pec Deck</li>
+                <li class="workout">Push Up</li>
+                <li class="workout">Resistance Band Chest Fly</li>
+                <li class="workout">Standing Cable Chest Fly</li>
+                <li class="workout">Band External Shoulder Rotation</li>
+                <li class="workout">Band Internal Shoulder Rotation</li>
+                <li class="workout">Band Pull-Apart</li>
+                <li class="workout">Barbell Front Raise</li>
+                <li class="workout">Barbell Rear Delt Row</li>
+                <li class="workout">Barbell Upright Row</li>
+                <li class="workout">Behind the Neck Press</li>
+                <li class="workout">Cable Lateral Raise</li>
+                <li class="workout">Cable Rear Delt Row</li>
+                <li class="workout">Dumbbell Front Raise</li>
+                <li class="workout">Dumbbell Horizontal Internal Shoulder Rotation</li>
+                <li class="workout">Dumbbell Horizontal External Shoulder Rotation</li>
+                <li class="workout">Dumbbell Lateral Raise</li>
+                <li class="workout">Dumbbell Rear Delt Row</li>
+                <li class="workout">Dumbbell Shoulder Press</li>
+                <li class="workout">Face Pull</li>
+                <li class="workout">Lying Dumbbell External Shoulder Rotation</li>
+                <li class="workout">Lying Dumbbell Internal Shoulder Rotation</li>
+                <li class="workout">Machine Lateral Raise</li>
+                <li class="workout">Machine Shoulder Press</li>
+                <li class="workout">Monkey Row</li>
+                <li class="workout">Overhead Press</li>
+                <li class="workout">Power Jerk</li>
+                <li class="workout">Push Press</li>
+                <li class="workout">Reverse Dumbbell Fly</li>
+                <li class="workout">Reverse Machine Fly</li>
+                <li class="workout">Seated Dumbbell Shoulder Press</li>
+                <li class="workout">Seated Barbell Overhead Press</li>
+                <li class="workout">Seated Smith Machine Shoulder Press</li>
+                <li class="workout">Snatch Grip Behind the Neck Press</li>
+                <li class="workout">Squat Jerk</li>
+                <li class="workout">Split Jerk</li>
+                <li class="workout">Barbell Curl</li>
+                <li class="workout">Barbell Preacher Curl</li>
+                <li class="workout">Cable Curl With Bar</li>
+                <li class="workout">Cable Curl With Rope</li>
+                <li class="workout">Concentration Curl</li>
+                <li class="workout">Dumbbell Curl</li>
+                <li class="workout">Dumbbell Preacher Curl</li>
+                <li class="workout">Hammer Curl</li>
+                <li class="workout">Incline Dumbbell Curl</li>
+                <li class="workout">Spider Curl</li>
+                <li class="workout">Triceps Exercises</li>
+                <li class="workout">Barbell Standing Triceps Extension</li>
+                <li class="workout">Barbell Lying Triceps Extension</li>
+                <li class="workout">Bench Dip</li>
+                <li class="workout">Close-Grip Push-Up</li>
+                <li class="workout">Dumbbell Lying Triceps Extension</li>
+                <li class="workout">Dumbbell Standing Triceps Extension</li>
+                <li class="workout">Overhead Cable Triceps Extension</li>
+                <li class="workout">Tricep Pushdown With Bar</li>
+                <li class="workout">Tricep Pushdown With Rope</li>
+                <li class="workout">Air Squat</li>
+                <li class="workout">Barbell Hack Squat</li>
+                <li class="workout">Barbell Lunge</li></li>
+                <li class="workout">Body Weight Lunge</li>
+                <li class="workout">Box Squat</li>
+                <li class="workout">Bulgarian Split Squat</li>
+                <li class="workout">Chair Squat</li>
+                <li class="workout">Dumbbell Lunge</li>
+                <li class="workout">Dumbbell Squat</li>
+                <li class="workout">Front Squat</li>
+                <li class="workout">Goblet Squat</li>
+                <li class="workout">Hack Squat Machine</li>
+                <li class="workout">Half Air Squat</li>
+                <li class="workout">Hip Adduction Machine</li>
+                <li class="workout">Landmine Hack Squat</li>
+                <li class="workout">Landmine Squat</li>
+                <li class="workout">Leg Extension</li>
+                <li class="workout">Leg Press</li>
+                <li class="workout">Lying Leg Curl</li>
+                <li class="workout">Pause Squat</li>
+                <li class="workout">Safety Bar Squat</li>
+                <li class="workout">Seated Leg Curl</li>
+                <li class="workout">Shallow Body Weight Lunge</li>
+                <li class="workout">Side Lunges (Bodyweight)</li>
+                <li class="workout">Smith Machine Squat</li>
+                <li class="workout">Squat</li>
+                <li class="workout">Step Up</li>
+                <li class="workout">Back Extension</li>
+                <li class="workout">Barbell Row</li>
+                <li class="workout">Barbell Shrug</li>
+                <li class="workout">Block Snatch</li>
+                <li class="workout">Cable Close Grip Seated Row</li>
+                <li class="workout">Cable Wide Grip Seated Row</li>
+                <li class="workout">Chin-Up</li>
+                <li class="workout">Clean</li>
+                <li class="workout">Clean and Jerk</li>
+                <li class="workout">Deadlift</li>
+                <li class="workout">Deficit Deadlift</li>
+                <li class="workout">Dumbbell Deadlift</li>
+                <li class="workout">Dumbbell Romanian Deadlift</li>
+                <li class="workout">Dumbbell Row</li>
+                <li class="workout">Dumbbell Shrug</li>
+                <li class="workout">Floor Back Extension</li>
+                <li class="workout">Good Morning</li>
+                <li class="workout">Hang Clean</li>
+                <li class="workout">Hang Power Clean</li>
+                <li class="workout">Hang Power Snatch</li>
+                <li class="workout">Hang Snatch</li>
+                <li class="workout">Inverted Row</li>
+                <li class="workout">Inverted Row with Underhand Grip</li>
+                <li class="workout">Kettlebell Swing</li>
+                <li class="workout">Lat Pulldown With Pronated Grip</li>
+                <li class="workout">Lat Pulldown With Supinated Grip</li>
+                <li class="workout">One-Handed Cable Row</li>
+                <li class="workout">One-Handed Lat Pulldown</li>
+                <li class="workout">Pause Deadlift</li>
+                <li class="workout">Pendlay Row</li>
+                <li class="workout">Power Clean</li>
+                <li class="workout">Power Snatch</li>
+                <li class="workout">Pull-Up</li>
+                <li class="workout">Rack Pull</li>
+                <li class="workout">Romanian Deadlift</li>
+                <li class="workout">Seal Row</li>
+                <li class="workout">Seated Machine Row</li>
+                <li class="workout">Snatch</li>
+                <li class="workout">Snatch Grip Deadlift</li>
+                <li class="workout">Stiff-Legged Deadlift</li>
+                <li class="workout">Straight Arm Lat Pulldown</li>
+                <li class="workout">Sumo Deadlift</li>
+                <li class="workout">T-Bar Row</li>
+                <li class="workout">Trap Bar Deadlift With High Handles</li>
+                <li class="workout">Trap Bar Deadlift With Low Handles</li>
+                <li class="workout">Banded Side Kicks</li>
+                <li class="workout">Cable Pull Through</li>
+                <li class="workout">Clamshells</li>
+                <li class="workout">Fire Hydrants</li>
+                <li class="workout">Glute Bridge</li>
+                <li class="workout">Hip Abduction Against Band</li>
+                <li class="workout">Hip Abduction Machine</li>
+                <li class="workout">Hip Thrust</li>
+                <li class="workout">Hip Thrust With Band Around Knees</li>
+                <li class="workout">Lateral Walk With Band</li>
+                <li class="workout">One-Legged Glute Bridge</li>
+                <li class="workout">One-Legged Hip Thrust</li>
+                <li class="workout">Step Up</li>
+                <li class="workout">Cable Crunch</li>
+                <li class="workout">Crunch</li>
+                <li class="workout">Hanging Leg Raise</li>
+                <li class="workout">Hanging Knee Raise</li>
+                <li class="workout">Hanging Sit-Up</li>
+                <li class="workout">High to Low Wood Chop with Band</li>
+                <li class="workout">Horizontal Wood Chop with Band</li>
+                <li class="workout">Kneeling Ab Wheel Roll-Out</li>
+                <li class="workout">Kneeling Plank</li>
+                <li class="workout">Kneeling Side Plank</li>
+                <li class="workout">Lying Leg Raise</li>
+                <li class="workout">Lying Windshield Wiper</li>
+                <li class="workout">Lying Windshield Wiper with Bent Knees</li>
+                <li class="workout">Machine Crunch</li>
+                <li class="workout">Oblique Crunch</li>
+                <li class="workout">Oblique Sit-Up</li>
+                <li class="workout">Plank</li>
+                <li class="workout">Side Plank</li>
+                <li class="workout">Sit-Up</li>
+                <li class="workout">Eccentric Heel Drop</li>
+                <li class="workout">Heel Raise</li>
+                <li class="workout">Seated Calf Raise</li>
+                <li class="workout">Standing Calf Raise</li>
+                <li class="workout">Barbell Wrist Curl</li>
+                <li class="workout">Barbell Wrist Curl Behind the Back</li>
+                <li class="workout">Bar Hang</li>
+                <li class="workout">Dumbbell Wrist Curl</li>
+                <li class="workout">Farmers Walk</li>
+                <li class="workout">Fat Bar Deadlift</li>
+                <li class="workout">Gripper</li>
+                <li class="workout">One-Handed Bar Hang</li>
+                <li class="workout">Plate Pinch</li>
+                <li class="workout">Plate Wrist Curl</li>
+                <li class="workout">Towel Pull-Up</li>
+                <li class="workout">Barbell Wrist Extension</li>
+                <li class="workout">Dumbbell Wrist Extension</li>
+            </ul>  -->
+        
