@@ -1,4 +1,4 @@
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,11 +15,11 @@ body {
     background: linear-gradient(45deg, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    overflow: scroll;
+    overflow: scroll; 
 }
 
 
-h1 {
+/*h1 {
     font-size: 3rem;
     color: white;
     text-align: center;
@@ -65,7 +65,7 @@ h1 {
             }
 
             /* When the input field gets focus, change its width to 100% */
-            #searchbar[type=text]:focus {
+            /*#searchbar[type=text]:focus {
         	    width: 90%;
             }
 
