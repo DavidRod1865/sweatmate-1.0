@@ -21,13 +21,16 @@
     <!-- <h2><%= user.userName %> has <%= left %> things left to do.</h2> -->
     
     <div class="container">
-        <button class="addworkout button-47">Add Workout</button>
-        <div class="searchfield">
-            <input type="date" name="workout-date" class="workoutDate">
-            <input id="searchbar" type="text" name="search" placeholder="Search for a Workout">
-            <div class="output"></div>
-        </div>
-        <button class='button-47'><input type="submit" name="submit" class="submit"></button>
+        <button class="addworkout button-47">Choose Muscle Group</button>
+        <select name="search" id="searchScroll" size="1"></select>
+        <!-- <input id="searchbar" type="text" name="search" placeholder="Search for a Workout"> -->
+        <div id="loading"></div>
+        <!-- <div class="searchfield"> -->
+            <select id="output" size="1"></select>
+            <p class="description"></p>
+            <!-- <input type="date" name="workout-date" class="workoutDate"> -->
+        <!-- </div> -->
+        <button class='console' type="submit" action="createTodo">Console</button>
     </div>
 
     <form action="/todos/createTodo" method='POST'>

@@ -1,4 +1,4 @@
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
 }
 
 
-/*h1 {
+h1 {
     font-size: 3rem;
     color: white;
     text-align: center;
@@ -40,7 +40,6 @@ body {
 }
 
     .searchfield {
-        display: none;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -65,7 +64,7 @@ body {
             }
 
             /* When the input field gets focus, change its width to 100% */
-            /*#searchbar[type=text]:focus {
+            #searchbar[type=text]:focus {
         	    width: 90%;
             }
 
@@ -78,14 +77,16 @@ body {
                 margin: 1rem;
             }
 
-    .output {
-        width: 100%;
-        max-height: 50vh;
-        overflow: scroll;
+    #output {
+        /* width: 100%;
+        max-height: 40vh;
+        overflow: scroll; */
+        border-radius: 10px;
+        visibility: hidden;
     }
 
-    .output:empty:after {
-        content: "Write a workout above!";
+    #output.visible {
+        visibility: visible;
     }
 
         .workout {
@@ -95,7 +96,7 @@ body {
             overflow: hidden;
         }
 
-        li {
+        .exercise {
             background-color: white;
             padding: 1rem;
             border-bottom: 1px solid #ccc;
@@ -103,11 +104,17 @@ body {
             list-style: none;
         }
 
-        li:last-child {
+        .exercise:last-child {
             border-bottom: none;
         }
 
-        li:hover {
+        .exercise:hover {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .exercise:focus {
             background-color: #333;
             color: #fff;
             cursor: pointer;
@@ -150,19 +157,43 @@ body {
         touch-action: manipulation;
     }
 
-        /* .completed{
+        .completed{
             text-decoration: line-through;
             color: gray;
         }
         .not{
             text-decoration: underline;
-        } */
+        }
 
-    /* .workout-list {
+    .workout-list {
 	    font-size: 1.5em;
 	    margin-left: 90px;
     }
 
     .workout{
     display: none;	
-    } */
+    }
+
+    #loading {
+        width: 2rem;
+        height: 2rem;
+        border: 5px solid #ccc;
+        border-top: 6px solid #333;
+        border-radius: 100%;
+        margin: auto;
+        display: none;
+        animation: spin 1s linear infinite;
+    }
+
+    #loading.visible {
+        display: block;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
