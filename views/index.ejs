@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Tracker</title>
-    <link rel="stylesheet" type="text/css" href="../public/css/pre-login.css">
-</head>
-<body>
-    <div class="login">
-        <h1>Workout Tracker</h1>
-        <h3 class="slogan">You don't have to be extreme. Just consistent.</h3>
-        <a href="/login"><button class="button-24">Log In</button></a>
-        <a href="/signup"><button class="button-24">Sign Up</button></a>
-    </div>
-</body>
-</html>
+<%- include('partials/header.ejs') -%>
+
+<main class="login">
+    <h1>Workout Tracker</h1>
+    <h3 class="slogan">You don't have to be extreme. Just consistent.</h3>
+    <a href="/login"><button class="button-24">Log In</button></a>
+    <a href="/signup"><button class="button-24">Sign Up</button></a>
+</main>
+
+<%- include('partials/footer.ejs') -%>

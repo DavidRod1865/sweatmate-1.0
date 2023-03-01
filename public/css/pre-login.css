@@ -65,3 +65,51 @@ body {
     .button-24:active {
         opacity: .5;
     }
+
+.text-center {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+}
+
+    .text-center h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+
+    .text-center span {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+
+    .text-center a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    
+    .text-center a:hover {
+        color: #FF4742;
+        text-decoration: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    footer p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        margin: 0;
+    }
