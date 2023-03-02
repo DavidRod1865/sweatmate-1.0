@@ -1,4 +1,5 @@
 const Todo = require('../models/Todo')
+const Workout = require('../models/Workout')
 
 module.exports = {
     getTodos: async (req,res)=>{
@@ -7,6 +8,30 @@ module.exports = {
             const todoItems = await Todo.find({userId:req.user.id})
             const itemsLeft = await Todo.countDocuments({userId:req.user.id, completed: false})
             res.render('calendar.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    createWorkout: async (req,res)=>{
+        console.log(req.user)
+        try{
+            const todoItems = await Todo.find({userId:req.user.id})
+            const itemsLeft = await Todo.countDocuments({userId:req.user.id, completed: false})
+            res.render('postWorkout.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    postWorkout: async (req, res)=>{
+        try{
+            await Workout.create({
+                date: req.body.date,
+                exercise: req.body.exercise,
+                notes: req.body.notes,
+                userId: req.user.id
+            })
+            console.log('Workout has been added!')
+            res.redirect('/calendar')
         }catch(err){
             console.log(err)
         }
