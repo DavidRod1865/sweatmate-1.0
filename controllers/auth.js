@@ -46,7 +46,7 @@ const User = require('../models/User')
       res.redirect('/')
     })
   }
-  
+
   exports.getSignup = (req, res) => {
     if (req.user) {
       return res.redirect('/calendar')
