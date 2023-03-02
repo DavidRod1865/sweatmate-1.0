@@ -1,31 +1,21 @@
 <%- include('partials/header') -%>
 
     <h1>Workout</h1>
-    <form action="/calendar/createWorkout" method='POST'>
-        <input type="text" placeholder="Enter Workout Name" name='workoutName'>
-        <input type="text" placeholder="Enter Workout Description" name='workoutDescription'>
-        <input type="text" placeholder="Enter Workout Date" name='workoutDate'>
-        <input type="text" placeholder="Enter Workout Time" name='workoutTime'>
-        <input type="text" placeholder="Enter Workout Duration" name='workoutDuration'>
-        <input type="text" placeholder="Enter Workout Location" name='workoutLocation'>
-        <input type="text" placeholder="Enter Workout Notes" name='workoutNotes'>
-        <input type="text" placeholder="Enter Workout Muscle Group" name='workoutMuscleGroup'>
-        <input type="text" placeholder="Enter Workout Equipment" name='workoutEquipment'>
-        <input type="text" placeholder="Enter Workout Reps" name='workoutReps'>
-        <input type="text" placeholder="Enter Workout Sets" name='workoutSets'>
-        <input type="text" placeholder="Enter Workout Weight" name='workoutWeight'>
-        <input type="text" placeholder="Enter Workout Distance" name='workoutDistance'>
-        <input type="text" placeholder="Enter Workout Calories" name='workoutCalories'>
-        <input type="text" placeholder="Enter Workout Intensity" name='workoutIntensity'>
-        <input type="text" placeholder="Enter Workout Type" name='workoutType'>
-        <input type="text" placeholder="Enter Workout Difficulty" name='workoutDifficulty'>
-        <input type="text" placeholder="Enter Workout Rating" name='workoutRating'>
-        <input type="text" placeholder="Enter Workout Image" name='workoutImage'>
-        <input type="text" placeholder="Enter Workout Video" name='workoutVideo'>
-        <input type="text" placeholder="Enter Workout Link" name='workoutLink'>
-        <input type="text" placeholder="Enter Workout Author" name='workoutAuthor'>
-        <input type="text" placeholder="Enter Workout Author Image" name='workoutAuthorImage'>
-        <input type="text" placeholder="Enter Workout Author Bio" name='workoutAuthorBio'>
+    <form action="/calendar/postWorkout" method='POST'>
+            <button class="addworkout button-47">Choose Muscle Group</button>
+            <select name="search" id="searchScroll" size="1"></select>
+            <div id="loading"></div>
+            <select id="output" size="1"></select>
+            <!-- input for date, reps, sets, weight, duration, and notes -->
+            <input type="date" name="workout-date" class="workoutDate">
+            <input type="number" name="reps" class="reps" placeholder="Reps">
+            <input type="number" name="sets" class="sets" placeholder="Sets">
+            <input type="number" name="weight" class="weight" placeholder="weight">
+            <input type="number" name="duration" class="duration" placeholder="Duration">
+            <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
+            <!-- <input type="date" name="workout-date" class="workoutDate"> -->
+            <!-- </div> -->
+            <button class='console' type="submit" action="postWorkout">Console</button>
     </form>
 
 <%- include('partials/footer') -%>

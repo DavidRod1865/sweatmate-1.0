@@ -82,11 +82,11 @@ h1 {
         max-height: 40vh;
         overflow: scroll; */
         border-radius: 10px;
-        visibility: hidden;
+        display: none;
     }
 
     #output.visible {
-        visibility: visible;
+        display: block;
     }
 
         .workout {

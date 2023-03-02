@@ -1,17 +1,12 @@
-// function search_workout(){
-//     let input = document.getElementById('searchbar').value;
-//     input = input.toLowerCase();
-//     let exercise = document.getElementsByClassName('workout_list');
-
-//     for (let i = 0; i < exercise.length; i++){
-//         if (!exercise[i].innerHTML.toLowerCase().includes(input)){
-//             exercise[i].style.display = "list-item";
-//         } 
-//         else {
-//             exercise[i].style.display = "none";
-//         }
-//     }
-// } 
+// Search Bar & Output Div
+// const input = document.querySelector('#searchbar');
+const input2 = document.querySelector('#searchScroll');
+const output = document.querySelector('#output');
+const searchField = document.querySelector('.searchfield');
+const workOut = document.querySelector('.workout');
+const loader = document.querySelector('#loading');
+const exercise1 = document.querySelector('.exercise');
+// const btn = document.querySelector('.console');
 
 const workout = [
     {label: "Abdominals", value: "abdominals"},
@@ -36,18 +31,7 @@ window.onload = () => {
     input2.innerHTML = workout.map(i => `<option>${i.label}</option>`);
   };
 
-// Search Bar & Output Div
-const input = document.querySelector('#searchbar');
-const input2 = document.querySelector('#searchScroll');
-const output = document.querySelector('#output');
-const searchField = document.querySelector('.searchfield');
-const workOut = document.querySelector('.workout');
-const loader = document.querySelector('#loading');
-const exercise1 = document.querySelector('.exercise');
-// const btn = document.querySelector('.console');
-
-document.querySelector('.addworkout').addEventListener("click", find_workout)
-// btn.addEventListener('click', createTodo);
+document.querySelector('.addworkout').addEventListener("click", findWorkout)
 
 function displayLoading() {
     loader.classList.add("visible");
@@ -56,7 +40,7 @@ function displayLoading() {
     }, 2000);
 }
 
-async function find_workout() {
+async function findWorkout(){
     output.innerHTML = '';
     displayLoading();
     await fetch(`https://api.api-ninjas.com/v1/exercises?muscle=${input2.value}`, {
@@ -78,7 +62,7 @@ async function find_workout() {
         console.log(data);
         output.classList.add("visible");
             for(let i = 0; i < data.length; i++) {
-            output.innerHTML += `<option class='exercise' name='exercise'>${data[i].name}</option>`;}
+            output.innerHTML += `<option name='exercise'>${data[i].name}</option>`;}
         })
     .catch(error => console.error(error))
 }

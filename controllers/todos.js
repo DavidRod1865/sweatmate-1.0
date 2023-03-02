@@ -23,6 +23,10 @@ module.exports = {
             await Workout.create({
                 date: req.body.date,
                 exercise: req.body.exercise,
+                sets: req.body.sets,
+                reps: req.body.reps,
+                weight: req.body.weight,
+                duration: req.body.duration,
                 notes: req.body.notes,
                 userId: req.user.id
             })

@@ -1,9 +1,17 @@
 const mongoose = require('mongoose');
 
-const ExerciseSchema = new mongoose.Schema({
-    name: {
+const WorkoutSchema = new mongoose.Schema({
+    userId: {
         type: String,
-        required: true,
+        required: true
+    },
+    date: {
+        type: Date,
+        required: true
+    },
+    exercise: {
+        type: String,
+        required: true
     },
     sets: {
         type: Number,
@@ -19,21 +27,6 @@ const ExerciseSchema = new mongoose.Schema({
     },    
     duration: {
         type: Number,
-    }
-});
-
-const WorkoutSchema = new mongoose.Schema({
-    userId: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        required: true
-    },
-    exercise: {
-        type: [ExerciseSchema],
-        required: true
     },
     notes: {
         type: String,

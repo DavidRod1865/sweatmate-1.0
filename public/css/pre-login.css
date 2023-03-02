@@ -89,12 +89,12 @@ body {
     }
 
     .text-center a {
-        color: #FFFFFF;
+        color: #FF4742;
         text-decoration: none;
     }
     
     .text-center a:hover {
-        color: #FF4742;
+        color: #42f2ff;
         text-decoration: none;
         transition: all 0.5s ease-in-out;
     }
