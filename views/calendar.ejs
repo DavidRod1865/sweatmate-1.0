@@ -1,18 +1,24 @@
 <%- include('partials/header') -%>
 
     <h1>Workouts</h1>
-    <!-- <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul> -->
-
+    
     <h2><%= user.userName %></h2>
-
+    
     <a href="/calendar/createWorkout"><button class="button-24">Add Workout</button></a>
+    <ul>
+    <% completedExercises.forEach( workout => { %>
+            <li class='exercise' data-id='<%=workout._id%>'>
+                <span><%= workout.exercise %></span>
+                <span><%= workout.date %></span>
+                <span><%= workout.reps %></span>
+                <span><%= workout.sets %></span>
+                <span><%= workout.weight %></span>
+                <span><%= workout.duration %></span>
+                <span><%= workout.notes %></span>
+            </li>
+            <span class='del'> Delete </span>
+    <% }) %>    
+    </ul>
 
     <a href="/logout">Logout</a>
 

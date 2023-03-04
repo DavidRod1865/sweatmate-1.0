@@ -7,14 +7,14 @@
             <div id="loading"></div>
             <select id="output" size="1"></select>
             <!-- input for date, reps, sets, weight, duration, and notes -->
-            <input type="date" name="workout-date" class="workoutDate">
+            <input type="text" name="exercise" class="exercise" placeholder="Exercise">
+            <!-- <input type="date" name="workout-date" class="workoutDate"> -->
             <input type="number" name="reps" class="reps" placeholder="Reps">
             <input type="number" name="sets" class="sets" placeholder="Sets">
             <input type="number" name="weight" class="weight" placeholder="weight">
             <input type="number" name="duration" class="duration" placeholder="Duration">
             <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
-            <!-- <input type="date" name="workout-date" class="workoutDate"> -->
-            <!-- </div> -->
+
             <button class='console' type="submit" action="postWorkout">Console</button>
     </form>
 

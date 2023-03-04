@@ -8,20 +8,21 @@ module.exports = {
           }
         res.redirect('/login')
       },
-    getTodos: async (req,res)=>{
+    getWorkouts: async (req,res)=>{
         console.log(req.user)
         try{
-            const todoItems = await Todo.find({userId:req.user.id})
+            const exercises = await Workout.find({userId:req.user.id})
             const itemsLeft = await Todo.countDocuments({userId:req.user.id, completed: false})
-            res.render('calendar.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            res.render('calendar.ejs', {completedExercises: exercises, left: itemsLeft, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
     postWorkout: async (req, res)=>{
+        console.log(req.body)
         try{
             await Workout.create({
-                date: req.body.date,
+                date: Date().trim(),
                 exercise: req.body.exercise,
                 sets: req.body.sets,
                 reps: req.body.reps,
