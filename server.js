@@ -19,6 +19,7 @@ connectDB()
 
 app.set('view engine', 'ejs')
 app.use('/public', express.static(__dirname + '/public'));
+app.use('/dist', express.static(__dirname + '/dist'));
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
