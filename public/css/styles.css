@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url(/public/img/gabriel-alenius-tJ0V_BdCi9I-unsplash.jpg) no-repeat center center fixed !important;
+/* body {
+    background-image: url("/public/img/gabriel-alenius-tJ0V_BdCi9I-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
+.workout-img {
+    width: 50%;
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* object-position: center; */
 }
