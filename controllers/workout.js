@@ -8,7 +8,7 @@ module.exports = {
         res.redirect('/login')
       },
     getWorkouts: async (req,res)=>{
-        console.log(req.user)
+        // console.log(req.user)
         try{
             const exercises = await Workout.find({userId:req.user.id})
             const itemsLeft = await Workout.countDocuments({userId:req.user.id, completed: false})
@@ -38,7 +38,7 @@ module.exports = {
     },
     deleteWorkout: async (req, res)=>{
         try{
-            await Workout.findByIdAndDelete({_id: req.params.id })
+            await Workout.find({userId:req.user.id}).deleteOne({_id:req.params.id})
             console.log('Deleted Workout')
             res.json('Deleted It')
             res.redirect("/calendar");

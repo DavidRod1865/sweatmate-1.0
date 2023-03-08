@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const WorkoutSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+    userId: {
+        type: String,
+        required: true
       },
     createdAt: {
         type: Date,
