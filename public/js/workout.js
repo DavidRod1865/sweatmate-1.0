@@ -27,11 +27,11 @@ const workout = [
     {label: "Triceps", value: "triceps"}
 ]
 
-window.onload = () => {
-    input2.innerHTML = workout.map(i => `<option>${i.label}</option>`);
-  };
+// window.onload = () => {
+//     input2.innerHTML = workout.map(i => `<option>${i.label}</option>`);
+//   };
 
-document.querySelector('.addworkout').addEventListener("click", findWorkout)
+// document.querySelector('.addworkout').addEventListener("click", findWorkout)
 
 function displayLoading() {
     loader.classList.add("visible");

@@ -1,26 +1,41 @@
 <%- include('partials/header') -%>
 
-    <h1>Workouts</h1>
-    
-    <h2><%= user.userName %></h2>
-    
-    <a href="/calendar/createWorkout"><button class="button-24">Add Workout</button></a>
-    <ul>
-    <% completedExercises.forEach( workout => { %>
-            <li class='exercise' data-id='<%=workout._id%>'>
-                <span><%= workout.exercise %></span>
-                <span><%= workout.date %></span>
-                <span><%= workout.reps %></span>
-                <span><%= workout.sets %></span>
-                <span><%= workout.weight %></span>
-                <span><%= workout.duration %></span>
-                <span><%= workout.notes %></span>
-            </li>
-            <span class='del'> Delete </span>
-    <% }) %>    
-    </ul>
+    <div class="d-flex flex-column align-items-center">
+        <h1>Workouts</h1>
+        <h2><%= user.userName %></h2>
+    </div>
 
-    <a href="/logout">Logout</a>
-
+    <a href="/calendar/createWorkout"><button class="btn btn-primary">Add Workout</button></a>
+    <div class="d-flex flex-column align-items-center">
+        <h3 class="">Completed Workouts</h3>
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Exercise</th>
+                    <!-- <th scope="col">Date</th> -->
+                    <th scope="col">Reps</th>
+                    <th scope="col">Sets</th>
+                    <th scope="col">Weight</th>
+                    <!-- <th scope="col">Duration</th>
+                    <th scope="col">Notes</th> -->
+                </tr>
+            </thead>
+        <% completedExercises.forEach( workout => { %>
+            <tbody>
+                <tr class='exercise' data-id='<%=workout._id%>'>
+                    <td scope="row"><%= workout.exercise %></td>
+                    <!-- <td scope="row"><%= workout.date %></td> -->
+                    <td scope="row"><%= workout.reps %></td>
+                    <td scope="row"><%= workout.sets %></td>
+                    <td scope="row"><%= workout.weight %></td>
+                    <!-- <td scope="row"><%= workout.duration %></td>
+                    <td scope="row"><%= workout.notes %></td> -->
+                    <td scope="row"><button class="btn btn-primary" method="DELETE" href="/calendar/deleteWorkout/workout._id">Delete</button></td>
+                </tr>
+            </tbody>
+            <!-- <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button> -->
+        <% }) %>   
+        </table>
+    </div>
 
 <%- include('partials/footer') -%>

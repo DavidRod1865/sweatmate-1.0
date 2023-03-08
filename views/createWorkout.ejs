@@ -1,21 +1,19 @@
 <%- include('partials/header') -%>
 
-    <h1>Workout</h1>
-    <form action="/calendar/postWorkout" method='POST'>
-            <button class="addworkout button-47">Choose Muscle Group</button>
-            <select name="search" id="searchScroll" size="1"></select>
-            <div id="loading"></div>
-            <select id="output" size="1"></select>
-            <!-- input for date, reps, sets, weight, duration, and notes -->
-            <input type="text" name="exercise" class="exercise" placeholder="Exercise">
-            <!-- <input type="date" name="workout-date" class="workoutDate"> -->
-            <input type="number" name="reps" class="reps" placeholder="Reps">
-            <input type="number" name="sets" class="sets" placeholder="Sets">
-            <input type="number" name="weight" class="weight" placeholder="weight">
-            <input type="number" name="duration" class="duration" placeholder="Duration">
-            <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
-
-            <button class='console' type="submit" action="postWorkout">Console</button>
+    <form class="d-flex flex-column align-items-center" action="/calendar/postWorkout" method='POST'>
+        <!-- <button class="addworkout button-47">Choose Muscle Group</button> -->
+        <!-- <select name="search" id="searchScroll" size="1"></select> -->
+        <!-- <div id="loading"></div> -->
+        <!-- <select id="output" size="1"></select> -->
+        <!-- input for date, reps, sets, weight, duration, and notes -->
+        <input type="text" name="exercise" class="exercise m-1" placeholder="Exercise">
+        <!-- <input type="date" name="workout-date" class="workoutDate"> -->
+        <input type="number" name="reps" class="reps m-1" placeholder="Reps">
+        <input type="number" name="sets" class="sets m-1" placeholder="Sets">
+        <input type="number" name="weight" class="weight m-1" placeholder="weight">
+        <input type="number" name="duration" class="duration m-1" placeholder="Duration">
+        <textarea class="m-1" id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
+        <button class='btn btn-primary m-1' type="submit" action="/calendar/postWorkout">Add Workout</button>
     </form>
 
 <%- include('partials/footer') -%>

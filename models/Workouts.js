@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const WorkoutSchema = new mongoose.Schema({
-    userId: {
-        type: String,
-        required: true
-    },
-    date: {
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    createdAt: {
         type: Date,
-        required: false
+        default: Date.now,
     },
     exercise: {
         type: String,
