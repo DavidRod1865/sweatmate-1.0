@@ -1,7 +1,7 @@
 {
-  "name": "todo-mvc-auth-local",
+  "name": "workout-log",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Simple Workout App built using the MVC Architecture, we have also implemented \"authorization\" so folks can sign up and log their workouts on the app",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -24,5 +24,15 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidRod1865/workout-log.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/DavidRod1865/workout-log/issues"
+  },
+  "homepage": "https://github.com/DavidRod1865/workout-log#readme"
 }
