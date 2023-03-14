@@ -20,9 +20,9 @@
                     <th scope="col">Notes</th> -->
                 </tr>
             </thead>
-        <% completedExercises.forEach( workout => { %>
             <tbody>
-                <tr class='exercise' data-id='<%=workout._id%>'>
+        <% completedExercises.forEach( workout => { %>
+                <tr class='exercise' data-id='<%=workout._id%>' method="DELETE" action="/calendar/deleteWorkout/workout._id">
                     <td scope="row"><%= workout.exercise %></td>
                     <!-- <td scope="row"><%= workout.date %></td> -->
                     <td scope="row"><%= workout.reps %></td>
@@ -32,9 +32,9 @@
                     <td scope="row"><%= workout.notes %></td> -->
                     <td scope="row"><button class="btn btn-primary" method="DELETE" href="/calendar/deleteWorkout/workout._id">Delete</button></td>
                 </tr>
+                <!-- <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button> -->
+                <% }) %>   
             </tbody>
-            <!-- <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button> -->
-        <% }) %>   
         </table>
     </div>
 

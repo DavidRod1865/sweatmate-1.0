@@ -38,13 +38,12 @@ module.exports = {
     },
     deleteWorkout: async (req, res)=>{
         try{
-            await Workout.find({userId:req.user.id}).deleteOne({_id:req.params.id})
+            await Workout.findOneAndDelete({_id:req.params.id})
             console.log('Deleted Workout')
             res.json('Deleted It')
             res.redirect("/calendar");
         }catch(err){
             console.log(err)
-            res.redirect("/calendar");
         }
     }
 }    
