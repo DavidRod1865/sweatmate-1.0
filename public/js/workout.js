@@ -66,3 +66,18 @@ async function findWorkout(){
         })
     .catch(error => console.error(error))
 }
+
+var isOn = false;
+
+function darkMode () {
+    if(!isOn) {
+        document.getElementsByClassName('wholeBody').setAttribute('data-theme', 'dracula');
+        isOn = true;
+    }
+    else {
+        document.getElementsByClassName('wholeBody').setAttribute('data-theme', 'cupcake');
+        isOn = false;
+    }
+}
+
+document.getElementsByClassName('darkMode').addEventListener("click", console.log("hello"));
