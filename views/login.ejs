@@ -9,32 +9,40 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body data-theme="dracula" id="wholeBody" class="box-border h-screen flex flex-col place-content-between">
+<body data-theme="synthwave" id="wholeBody" class="box-border h-screen flex flex-col place-content-between justify-items-center items-center">
 
-    <div class="flex flex-col justify-items-center items-center mt-36">
+    <h1><a class="text-lg font-bold" href="/calendar">Workout Log</a></h1>
+
+    <div class="flex flex-col items-center">
         <h1 class="mt-3">Log In</h1>
         <img src="/public/img/log-in.svg" alt="fitness" class="workout-img m-3">
 
         <form action="/login" method="POST" class="flex flex-col m-4">
-            <input class="m-2" type="email" name="email" placeholder="Email">
-                <% if (locals.messages.errors) { %>
-                    <% messages.errors.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
+            <label class="input-group input-group-vertical m-2">
+              <span class="">Email</span>
+              <input type="text" name="email" placeholder="info@site.com" class="input input-bordered" />
+              <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
                     <% }) %>    
-                <% } %>
-            <input class="m-2" type="password" name="password" placeholder="Password">
-                <% if (locals.messages.info) { %>
-                    <% messages.info.forEach( el => { %>
-                        <div class="alert alert-danger"><%= el.msg %></div>
-                    <% }) %>    
-                <% } %>
+                    <% } %>
+            </label>
+            <label class="input-group input-group-vertical m-2">
+                <span class="">Email</span>
+                <input type="text" name="password" placeholder="Password" class="input input-bordered" />
+            <% if (locals.messages.info) { %>
+                <% messages.info.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            </label>
             <input type="submit" class="btn btn-lg m-6">
         </form>
     </div>
 
-<footer>
-    <p class="m-3 text-center">© 2023 DaveCodes.Tech</p>
-</footer>
+    <footer>
+        <p class="m-3 text-center">© 2023 DaveCodes.Tech</p>
+    </footer>
 
 </body>
 </html>
