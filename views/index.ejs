@@ -1,12 +1,26 @@
-<%- include('partials/header.ejs') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Log</title>
+    <link href="/public/css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body data-theme="dracula" id="wholeBody" class="box-border h-screen flex flex-col place-content-between">
 
-<main class="flex flex-col justify-items-center items-center">
+<main class="flex flex-col justify-items-center items-center mt-36">
     <img src="/public/img/working-out.svg" alt="fitness" class="workout-img">
     <h3 class="m-3 text-center">You don't have to be extreme. Just consistent.</h3>
-    <a href="/login"><button class="btn btn-lg btn-primary m-2">Log In</button></a>
-    <a href="/signup"><button class="btn btn-lg btn-primary mb-3">Sign Up</button></a>
+    <a href="/login"><button class="btn btn-lg btn-primary m-6">Log In</button></a>
+    <a href="/signup"><button class="btn btn-lg btn-primary">Sign Up</button></a>
 </main>
 
 <footer>
     <p class="m-3 text-center">© 2023 DaveCodes.Tech</p>
-  </footer>
+</footer>
+
+</body>
+</html>
