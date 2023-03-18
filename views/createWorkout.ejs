@@ -1,19 +1,31 @@
 <%- include('partials/header') -%>
 
-    <form class="d-flex flex-column align-items-center" action="/calendar/postWorkout" method='POST'>
-        <!-- <button class="addworkout button-47">Choose Muscle Group</button> -->
-        <!-- <select name="search" id="searchScroll" size="1"></select> -->
-        <!-- <div id="loading"></div> -->
-        <!-- <select id="output" size="1"></select> -->
-        <!-- input for date, reps, sets, weight, duration, and notes -->
-        <input type="text" name="exercise" class="exercise m-1" placeholder="Exercise">
-        <!-- <input type="date" name="workout-date" class="workoutDate"> -->
-        <input type="number" name="reps" class="reps m-1" placeholder="Reps">
-        <input type="number" name="sets" class="sets m-1" placeholder="Sets">
-        <input type="number" name="weight" class="weight m-1" placeholder="weight">
-        <input type="number" name="duration" class="duration m-1" placeholder="Duration">
-        <textarea class="m-1" id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
-        <button class='btn btn-primary m-1' type="submit" action="/calendar/postWorkout">Add Workout</button>
+    <form class="flex flex-col place-items-center w-56 lg:w-60 lg:flex-vertical" action="/calendar/postWorkout" method='POST'>
+        <label class="input-group input-group-vertical m-2">
+            <span>Date:</span>
+            <input type="date" id="date" name="date" required class="input input-bordered">
+        </label>
+        <label class="input-group input-group-vertical m-2">
+            <span>Exercise:</span>
+            <input type="text" name="exercise" class="exercise m-1 input input-bordered" placeholder="Exercise Name">
+        </label>
+        <label class="input-group input-group-vertical m-2">
+            <span>Reps:</span>
+            <input type="number" name="reps" class="reps m-1 input input-bordered" placeholder="# of Reps">
+        </label>
+        <label class="input-group input-group-vertical m-2">
+            <span>Sets:</span>
+            <input type="number" name="sets" class="sets m-1 input input-bordered" placeholder="# of Sets">
+        </label>
+        <label class="input-group input-group-vertical m-2">
+            <span>Weight:</span>
+            <input type="number" name="weight" class="weight m-1 input input-bordered" placeholder="Weight in Lbs.">
+        </label>
+        <label class="input-group input-group-vertical m-2">
+            <span>Notes:</span>
+            <textarea class="m-1 input input-bordered" id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
+        </label>
+        <button class='btn btn-primary m-1 w-42' action="/calendar/postWorkout">Add Workout</button>
     </form>
 
 <%- include('partials/footer') -%>

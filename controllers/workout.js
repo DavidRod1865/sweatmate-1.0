@@ -11,8 +11,10 @@ module.exports = {
         // console.log(req.user)
         try{
             const exercises = await Workout.find({userId:req.user.id})
-            const itemsLeft = await Workout.countDocuments({userId:req.user.id, completed: false})
-            res.render('calendar.ejs', {completedExercises: exercises, left: itemsLeft, user: req.user})
+            res.render('calendar.ejs', {
+                exercises: exercises, 
+                user: req.user
+            })
         }catch(err){
             console.log(err)
         }
@@ -21,12 +23,11 @@ module.exports = {
         console.log(req.body)
         try{
             await Workout.create({
-                date: Date().trim(),
+                date: req.body.date,
                 exercise: req.body.exercise,
                 sets: req.body.sets,
                 reps: req.body.reps,
                 weight: req.body.weight,
-                duration: req.body.duration,
                 notes: req.body.notes,
                 userId: req.user.id
             })
@@ -37,8 +38,11 @@ module.exports = {
         }
     },
     deleteWorkout: async (req, res)=>{
+        console.log(req.body)
         try{
-            await Workout.findOneAndDelete({_id:req.params.id})
+            const exercises = await Workout.find({userId:req.user.id})
+            const exercise = exercises.find(exercise => exercise._id == req.body.id)
+            await exercise.findOneAndDelete({_id: req.body.id})
             console.log('Deleted Workout')
             res.json('Deleted It')
             res.redirect("/calendar");

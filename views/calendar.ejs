@@ -1,16 +1,16 @@
 <%- include('partials/header') -%>
 
-    <div class="flex-col items-center">
-        <h1>Workouts</h1>
-        <h2><%= user.userName %></h2>
-    </div>
+    <div class="flex flex-col items-center place-content-between">
+        
+    <h1>Workouts</h1>
+    <h2><%= user.userName %></h2>
 
     <div class="flex flex-col items-center">
         <h3 class="">Completed Workouts</h3>
        
         <!-- <div class="stats-horizontal shadow"> -->
   
-            <% completedExercises.forEach( workout => { %>
+            <% exercises.forEach( workout => { %>
             <div class='exercise stat flex flex-col items-center' data-id='<%=workout._id%>'>
                 <div class="stat-title"><%= workout.exercise %></div>
                     <!-- <td scope="row"><%= workout.date %></td> -->
@@ -30,14 +30,18 @@
                 </div>
                     <!-- <div class="stat"><%= workout.duration %></div>
                     <div class="stat"><%= workout.notes %></div> -->
-                <!-- <button class="btn btn-primary btn-circle" method="DELETE" href="/calendar/deleteWorkout/workout._id">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button> -->
+                <button class="btn btn-primary btn-circle">
+                    <a method="DELETE" href='/calendar/deleteWorkout/<%=workout._id%>'>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </a>
+                </button>
             </div>
                 <!-- <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button> -->
                 <% }) %> 
     </div> 
 
     <button class="btn btn-primary w-36"><a href="/calendar/createWorkout">Add Workout</a></button>
+
+    </div>
 
 <%- include('partials/footer') -%>
