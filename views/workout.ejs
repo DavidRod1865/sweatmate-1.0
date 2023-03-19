@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+
+<!-- <<button class="btn btn-primary btn-circle">
+    <a method="GET" href=''>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </a>
+</button> -->
+
+<h1>Workouts</h1>
+    <h2><%= user.userName %></h2>
+
+    <div class="flex flex-col items-center">
+        <h3 class="">Completed Workouts</h3>
+       
+        <div class="stats-horizontal shadow">
+  
+            <div class='exercise stat flex flex-col items-center'>
+                <div class="stat-title"><%= exercisePost.exercise %></div>
+                    <div scope="row"><%= exercisePost.date %></div>
+                <div class="stat flex">
+                    <div class="flex flex-col items-center">
+                        <div class="stat-value"><%= exercisePost.reps %></div>
+                        <div class="stat-desc">Reps</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="stat-value"><%= exercisePost.sets %></div>
+                        <div class="stat-desc">Sets</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="stat-value"><%= exercisePost.weight %></div>
+                        <div class="stat-desc">Weight</div>
+                    </div>
+                </div>
+                    <div class="stat"><%= exercisePost.notes %></div>
+            </div>
+                <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button>
+    </div>
+
+<%- include('partials/footer') -%>

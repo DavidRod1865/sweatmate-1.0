@@ -7,6 +7,17 @@ module.exports = {
           }
         res.redirect('/login')
       },
+    getWorkoutPost: async (req, res) => {
+            try {
+              const exercisePost = await Workout.findById(req.params.id);
+              res.render("workout.ejs", { 
+                exercisePost: exercisePost, 
+                user: req.user
+            });
+            } catch (err) {
+              console.log(err);
+            }
+          },
     getWorkouts: async (req,res)=>{
         // console.log(req.user)
         try{

@@ -7,6 +7,8 @@ router.get('/', ensureAuth, workoutController.getWorkouts)
 
 router.get('/createWorkout', workoutController.createWorkout)
 
+router.get('/workout/:id', workoutController.getWorkoutPost)
+
 router.post('/postWorkout', workoutController.postWorkout)
 
 router.delete('/deleteWorkout/:id', workoutController.deleteWorkout)
