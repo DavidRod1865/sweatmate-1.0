@@ -15,42 +15,7 @@
         <% } %>
         </ul>
 
-    <div class="flex flex-col items-center">
-        <h3 class="">Completed Workouts</h3>
-       
-        <!-- <div class="stats-horizontal shadow"> -->
-  
-            <% exercises.forEach( workout => { %>
-            <div class='exercise stat flex flex-col items-center' data-id='<%=workout._id%>'>
-                <div class="stat-title"><%= workout.exercise %></div>
-                    <!-- <td scope="row"><%= workout.date %></td> -->
-                <div class="stat flex">
-                    <div class="flex flex-col items-center">
-                        <div class="stat-value"><%= workout.reps %></div>
-                        <div class="stat-desc">Reps</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="stat-value"><%= workout.sets %></div>
-                        <div class="stat-desc">Sets</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="stat-value"><%= workout.weight %></div>
-                        <div class="stat-desc">Weight</div>
-                    </div>
-                </div>
-                    <!-- <div class="stat"><%= workout.duration %></div>
-                    <div class="stat"><%= workout.notes %></div> -->
-                <button class="btn btn-primary btn-circle">
-                    <a method="DELETE" href='/calendar/deleteWorkout/<%=workout._id%>'>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </a>
-                </button>
-            </div>
-                <!-- <button class="btn btn-primary" method="PUT" href="/calendar/editWorkout/workout._id">Edit</button> -->
-                <% }) %> 
-    </div> 
-
-    <button class="btn btn-primary w-36"><a href="/calendar/createWorkout">Add Workout</a></button>
+    <a href="/calendar/createWorkout"><button class="btn btn-primary w-36">Add Workout</button></a>
 
     </div>
 

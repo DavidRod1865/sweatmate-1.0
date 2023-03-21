@@ -9,6 +9,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const workoutRoutes = require('./routes/workouts')
+const methodOverride = require('method-override')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -20,9 +21,11 @@ connectDB()
 app.set('view engine', 'ejs')
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/dist', express.static(__dirname + '/dist'));
+app.use('/views', express.static(__dirname + '/views'));
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
+app.use(methodOverride('_method'))
 // Sessions
 app.use(
     session({

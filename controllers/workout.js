@@ -49,16 +49,15 @@ module.exports = {
         }
     },
     deleteWorkout: async (req, res)=>{
-        console.log(req.body)
-        try{
-            const exercises = await Workout.find({userId:req.user.id})
-            const exercise = exercises.find(exercise => exercise._id == req.body.id)
-            await exercise.findOneAndDelete({_id: req.body.id})
-            console.log('Deleted Workout')
-            res.json('Deleted It')
+        try {
+            // Find post by id
+            let workout = await Workout.findById({ _id: req.params.id });
+            // Delete post from db
+            await workout.remove({ _id: req.params.id });
+            console.log("Deleted Post");
             res.redirect("/calendar");
-        }catch(err){
-            console.log(err)
+        } catch (err) {
+            res.redirect("/calendar");
         }
-    }
-}    
+    },
+};
