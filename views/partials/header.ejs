@@ -8,22 +8,18 @@
     <link href="/public/css/style.css" rel="stylesheet">
     <link href="/dist/output.css" rel="stylesheet">
   </head>
-  <body data-theme="synthwave" id="wholeBody" class="box-border min-h-screen flex flex-col place-content-between justify-items-center items-center">
-    <div class="flex navbar justify-between place-content-between">
+  <body data-theme="synthwave" id="wholeBody" class="box-border h-screen w-screen flex flex-col place-content-between">
+    <nav class="flex place-content-between">
       
-      <div class="">
-        <h1><a class="text-lg font-bold" href="/calendar">Workout Log</a></h1>
-      </div>
+      <a class="text-lg font-bold" href="/calendar"><h1>Workout Log</h1></a>
+    
 
-      <div class="flex justify-end flex-1 px-3">
-          <div class="dropdown dropdown-end">
-            <ul tabindex="0" class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-              <li><a href="/calendar">Calendar</a></li> 
-              <li><a href="/calendar/createWorkout">Add Workout</a></li>
-              <li><a href="/logout">Logout</a></li>
-            </ul>
-          </div>
-      </div>
-    </div>
+      <ul class="flex gap-6 list-none font-medium w-20">
+        <li><a href="/calendar">Calendar</a></li> 
+        <li><a href="/calendar/createWorkout">Add Workout</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+    </nav>
   </body>
 </html>
