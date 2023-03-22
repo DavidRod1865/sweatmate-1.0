@@ -2,9 +2,10 @@
   "name": "workout-log",
   "version": "1.0.0",
   "description": "A Simple Workout App built using the MVC Architecture, we have also implemented \"authorization\" so folks can sign up and log their workouts on the app",
-  "main": "/views/index.ejs",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "nodemon server.js",
     "build:css": "postcss public/css/tailwind.css -o public/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
