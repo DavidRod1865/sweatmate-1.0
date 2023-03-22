@@ -46,12 +46,12 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/calendar', workoutRoutes)
  
-// app.listen(process.env.PORT, ()=>{
-//     console.log('Server is running, you better catch it!')
-// })
-
-connectDB().then(() => {
-  app.listen(PORT, () => {
-      console.log("listening for requests");
-  })
+app.listen(PORT, ()=>{
+    console.log('Server is running, you better catch it!')
 })
+
+// connectDB().then(() => {
+//   app.listen(PORT, () => {
+//       console.log("listening for requests");
+//   })
+// })
