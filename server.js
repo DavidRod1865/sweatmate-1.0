@@ -10,6 +10,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const workoutRoutes = require('./routes/workouts')
 const methodOverride = require('method-override')
+const PORT = process.env.PORT || 3000
 
 require('dotenv').config({path: './config/.env'})
 
@@ -47,4 +48,10 @@ app.use('/calendar', workoutRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
-})    
+})
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests");
+  })
+})
