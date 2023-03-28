@@ -1,10 +1,14 @@
 <%- include('partials/header') -%>
 
-    <div class="flex flex-col items-center place-content-between">
-        
-    <h1>Workouts</h1>
-    <h2><%= user.userName %></h2>
-
+<div class="flex flex-col items-center place-content-between">
+    
+    <div
+        class="auto-jsCalendar m-4" 
+        data-navigator-position="right" 
+        data-day-format="DDD">
+    </div>
+    
+    <p class="underline font-bold text-xlg tracking-wide"><%= user.userName %> Workouts</p>
     <table class="table-fixed">
     <% for(var i=0; i<exercises.length; i++) {%>
         <ul class="row list-unstyled">
