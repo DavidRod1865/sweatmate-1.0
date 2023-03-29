@@ -66,3 +66,11 @@ async function findWorkout(){
         })
     .catch(error => console.error(error))
 }
+
+const options = {
+    format: "dd-mm-yyyy",
+  };
+const myDatepicker = new te.Datepicker(
+    document.getElementById("myDatepicker"),
+    options
+  );

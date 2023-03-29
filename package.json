@@ -28,7 +28,7 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "postcss-cli": "^10.1.0",
-    "simple-jscalendar": "^1.4.4",
+    "tw-elements": "^1.0.0-beta1",
     "validator": "^13.6.0"
   },
   "repository": {
