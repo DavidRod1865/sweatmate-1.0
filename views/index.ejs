@@ -9,17 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body data-theme="synthwave" id="wholeBody" class="box-border h-screen flex flex-col place-content-between justify-items-center items-center">
-
-<h1 class="flex items-center"><a class="text-lg font-bold" href="/calendar">Workout Log</a></h1>
-
-
-<main class="flex flex-col justify-items-center items-center">
+<body class="bg-teal-200 box-border h-screen flex flex-col place-items-center place-content-between">
+    
+<div class="flex justify-items-center items-center m-40">
     <img src="/public/img/working-out.svg" alt="fitness" class="workout-img m-3 h-80">
-    <h3 class="m-3 text-center">You don't have to be extreme. Just consistent.</h3>
-    <a href="/login"><button class="btn btn-lg btn-primary m-6">Log In</button></a>
-    <a href="/signup"><button class="btn btn-lg btn-primary">Sign Up</button></a>
-</main>
+        
+    <main class="flex flex-col items-center bg-white ml-14 p-10 w-70 rounded-lg shadow hover:shadow-lg">
+        <a href="/calendar"><h1 class="text-4xl text-black flex items-center">Workout Log</h1></a>
+        <h3 class="mt-10 mb-5 text-center w-48">Get fit, stay accountable: log your workouts with ease!</h3>
+        <a href="/login"><button class="btn btn-primary m-6">Log In</button></a>
+        <a href="/signup"><button class="btn btn-primary">Sign Up</button></a>
+    </main>
+</div>
 
 <footer>
     <p class="m-3 text-center">© 2023 DaveCodes.Tech</p>

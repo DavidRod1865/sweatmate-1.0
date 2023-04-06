@@ -47,11 +47,5 @@ app.use('/', mainRoutes)
 app.use('/calendar', workoutRoutes)
  
 app.listen(PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+    console.log(`Server is running on ${PORT}, you better catch it!`)
 })
-
-// connectDB().then(() => {
-//   app.listen(PORT, () => {
-//       console.log("listening for requests");
-//   })
-// })
