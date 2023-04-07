@@ -1,11 +1,5 @@
 <%- include('partials/header') -%>
 
-<!-- <<button class="btn btn-primary btn-circle">
-    <a method="GET" href=''>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-    </a>
-</button> -->
-
 <h1>Workouts</h1>
     <h2><%= user.userName %></h2>
 
@@ -16,7 +10,7 @@
   
             <div class='exercise stat flex flex-col items-center'>
                 <div class="stat-title"><%= exercisePost.exercise %></div>
-                    <div scope="row"><%= exercisePost.date %></div>
+                    <div scope="row"><%= exercisePost.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }); %></div>
                 <div class="stat flex">
                     <div class="flex flex-col items-center">
                         <div class="stat-value"><%= exercisePost.reps %></div>

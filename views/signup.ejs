@@ -7,24 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="box-border h-screen flex flex-col place-content-between justify-items-center items-center">
+<body class="bg-teal-200 box-border h-screen flex flex-col place-items-center place-content-between">
 
-    <div class="d-flex flex-column bg-light align-items-center m-3 rounded-2">
-        <h1 class="mt-3">Sign Up</h1>
-        <img src="/public/img/sign-in.svg" alt="fitness" class="workout-img m-3">
-
-        <% if (locals.messages.errors) { %>
-            <% messages.errors.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
-            <% }) %>    
-        <% } %>
-        <form action="/signup" method="POST" class="d-flex flex-column">
-            <input class="mt-2" type="text" name="userName" placeholder="User Name">
-            <input class="mt-2" type="email" name="email" placeholder="Email">
-            <input class="mt-2" type="password" name="password" placeholder="Password">
-            <input class="mt-2" type="password" name="confirmPassword" placeholder="Confirm Password">
-            <input class="btn btn-primary m-4" type="submit">
-        </form>
+    <h1><a class="text-lg font-bold" href="/calendar">Workout Log</a></h1>
+    
+    <div class="flex justify-items-center items-center">
+        <img src="/public/img/sign-in.svg" alt="fitness" class="workout-img m-3 h-60">
+    
+        <div class="flex flex-col items-center bg-white ml-14 p-5 w-70 rounded-lg shadow hover:shadow-lg">
+            <h1 class="text-4xl text-black text-center">Sign Up</h1>
+            <% if (locals.messages.errors) { %>
+                <% messages.errors.forEach( el => { %>
+                    <div class="alert alert-danger"><%= el.msg %></div>
+                <% }) %>    
+            <% } %>
+            <form action="/signup" method="POST" class="flex flex-col m-4 items-center ">
+                <input class="p-4 rounded-lg mt-2" type="text" name="userName" placeholder="User Name">
+                <input class="p-4 rounded-lg mt-2" type="email" name="email" placeholder="Email">
+                <input class="p-4 rounded-lg mt-2" type="password" name="password" placeholder="Password">
+                <input class="p-4 rounded-lg mt-2" type="password" name="confirmPassword" placeholder="Confirm Password">
+                <input class="btn px-8 mt-8" type="submit">
+            </form>
+        </div>
     </div>
 
     <footer>
