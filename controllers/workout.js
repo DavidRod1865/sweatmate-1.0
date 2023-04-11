@@ -19,9 +19,12 @@ module.exports = {
             }
           },
     getWorkouts: async (req,res)=>{
-        // console.log(req.user)
+        console.log(req.body.calendar)
         try{
-            const exercises = await Workout.find({userId:req.user.id})
+            // const exercises = await Workout.find({userId:req.user.id})
+            const exercises = await Workout.find({
+                date: req.body.calendar,
+              });
             res.render('calendar.ejs', {
                 exercises: exercises, 
                 user: req.user
