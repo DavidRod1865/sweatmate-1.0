@@ -1,4 +1,5 @@
 const Workout = require('../models/Workouts')
+const dayjs = require('dayjs')
 
 module.exports = {
     createWorkout: (req,res) => {
@@ -18,12 +19,25 @@ module.exports = {
               console.log(err);
             }
           },
-    getWorkouts: async (req,res)=>{
-        console.log(req.body.calendar)
+    getWorkouts: async (req,res)=> {
         try{
             // const exercises = await Workout.find({userId:req.user.id})
             const exercises = await Workout.find({
-                date: req.body.calendar,
+                date: dayjs().format('MM/DD/YYYY'),
+              });
+            //   console.log(dayjs(exercises.date).format('MM/DD/YYYY'))
+            res.render('calendar.ejs', {
+                exercises: exercises, 
+                user: req.user
+            })
+        }catch(err){
+            console.log(err)
+        }
+    },
+    filterWorkouts: async (req,res)=> {
+        try{
+            const exercises = await Workout.find({
+                date: dayjs(req.body.calendar).toDate(),
               });
             res.render('calendar.ejs', {
                 exercises: exercises, 
@@ -37,7 +51,7 @@ module.exports = {
         console.log(req.body)
         try{
             await Workout.create({
-                date: req.body.date,
+                date: dayjs(req.body.date).format('MM/DD/YYYY'),
                 exercise: req.body.exercise,
                 sets: req.body.sets,
                 reps: req.body.reps,

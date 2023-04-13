@@ -5,6 +5,8 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, workoutController.getWorkouts)
 
+// router.get('/', workoutController.filterWorkouts)
+
 router.get('/createWorkout', workoutController.createWorkout)
 
 router.get('/workout/:id', workoutController.getWorkoutPost)
