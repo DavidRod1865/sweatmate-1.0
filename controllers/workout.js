@@ -37,7 +37,7 @@ module.exports = {
     filterWorkouts: async (req,res)=> {
         try{
             const exercises = await Workout.find({
-                date: dayjs(req.body.calendar).toDate(),
+                date: dayjs(req.body.calendar).toDate() ,
               });
             res.render('calendar.ejs', {
                 exercises: exercises, 
