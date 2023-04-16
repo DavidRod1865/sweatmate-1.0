@@ -32,7 +32,7 @@
 <div class="flex flex-col items-center place-content-between ">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     
-        <% if ( exercises.length > 0 ) {%>
+        <% if ( workouts.length > 0 ) {%>
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                     <h3 class="underline font-bold text-xlg tracking-wide">
@@ -53,29 +53,29 @@
                 <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="px-6 py-3 text-center">
-                        <a href="calendar/workout/<%= exercises[i]._id%>"><%= exercises[i].date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }); %></a>
+                        <a href="calendar/workout/<%= workouts[i]._id%>"><%= workouts[i].date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }); %></a>
                     </td>
                     <td class="px-6 py-3 text-center">
-                        <a><%= exercises.length %></a>
+                        <a><%= workouts.length %></a>
                     </td>
                     <td class="px-6 py-3 text-center">
-                        <a href="calendar/workout/<%= exercises[i]._id%>"><%= exercises[i].exercise %></a>
+                        <a href="calendar/workout/<%= workouts[i]._id%>"><%= workouts[i].exercise %></a>
                     </td>
                     <td class="px-6 py-3 text-center">
-                        <%= exercises[i].sets %>
+                        <%= workouts[i].sets %>
                     </td>
                     <td class="px-6 py-3 text-center">
-                        <%= exercises[i].reps %>
+                        <%= workouts[i].reps %>
                     </td>
                     <td class="px-6 py-3 text-center">
-                        <%= exercises[i].weight %> Lbs.
+                        <%= workouts[i].weight %> Lbs.
                     </td>
                 </tr>
             <% } %>
             </tbody>
         </table>
         <% } %>
-        <% if ( exercises.length == 0 ) {%>
+        <% if ( workouts.length == 0 ) {%>
             <h3 class="text-center">You have not worked out today!</h3>
         <% } %>
     </div>

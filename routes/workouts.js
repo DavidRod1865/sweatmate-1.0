@@ -5,7 +5,7 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, workoutController.getWorkouts)
 
-// router.get('/', workoutController.filterWorkouts)
+router.get('/workouts', ensureAuth, workoutController.workouts)
 
 router.get('/createWorkout', workoutController.createWorkout)
 

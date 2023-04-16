@@ -22,10 +22,15 @@ module.exports = {
     getWorkouts: async (req,res)=> {
         try{
             // const exercises = await Workout.find({userId:req.user.id})
+            // const exercises = await Workout.find({
+            //     date: dayjs().format('MM/DD/YYYY'),
+            //   });
+            const { date } = req.query; // Get the date from the request query params
+            console.log(dayjs(date).format('MM/DD/YYYY'))
+            const formattedDate = dayjs(date).format('MM/DD/YYYY'); // Format the date in the desired format
             const exercises = await Workout.find({
-                date: dayjs().format('MM/DD/YYYY'),
-              });
-            //   console.log(dayjs(exercises.date).format('MM/DD/YYYY'))
+                date: formattedDate,
+            }); 
             res.render('calendar.ejs', {
                 exercises: exercises, 
                 user: req.user
@@ -34,15 +39,17 @@ module.exports = {
             console.log(err)
         }
     },
-    filterWorkouts: async (req,res)=> {
+    workouts: async (req,res)=> {
         try{
-            const exercises = await Workout.find({
-                date: dayjs(req.body.calendar).toDate() ,
-              });
-            res.render('calendar.ejs', {
-                exercises: exercises, 
+            const { date } = req.query; // Get the date from the request query params
+            console.log(dayjs(date).format('MM/DD/YYYY'))
+            const selectedDate = dayjs(date).format('MM/DD/YYYY'); // Get the selected date from the "date" query parameter
+            const workouts = await Workout.find({ date: selectedDate }); // Filter workouts by the selected date
+            console.log(selectedDate)
+            res.render('workouts.ejs', { 
+                workouts: workouts,
                 user: req.user
-            })
+            });
         }catch(err){
             console.log(err)
         }
