@@ -69,9 +69,9 @@
 
 //filter workout by input date
 
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent the form from submitting
-    const selectedDate = document.getElementById('date').value; // Get the selected date from the input field
-    window.location.href = `/workouts?date=${selectedDate}`; // Redirect to the workouts route with the selected date as a query parameter
+    const selectedDate = document.getElementById("date").value; // Get the selected date from the input field
+    window.location.href = `/calendar/workouts?date=${selectedDate}`; // Redirect to the workouts route with the selected date as a query parameter
 });
