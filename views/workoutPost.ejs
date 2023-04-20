@@ -11,14 +11,14 @@
 </head>
 <body class="bg-teal-200 box-border h-screen flex flex-col place-items-center place-content-between">
 
-    <nav class="flex w-screen justify-between py-2 px-5">
+    <nav class="flex w-screen justify-between py-2 px-5 text-black">
       
-        <a class="text-lg font-bold" href="/calendar"><h1>Workout Log</h1></a>
+        <a class="text-lg font-bold" href="/home"><h1>Workout Log</h1></a>
   
         <ul class="flex gap-6 list-none font-medium w-72">
-          <li><a href="/calendar">Calendar</a></li>
-          <li><a href="/calendar/createWorkout">Add Workout</a></li>
-          <li><a href="/logout">Logout</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home/createWorkout">Add Workout</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
   
     </nav>
@@ -51,7 +51,7 @@
                     <div class="stat"><%= exercisePost.notes %></div>
             </div>
             <form
-            action="/calendar/deleteWorkout/<%= exercisePost.id %>?_method=DELETE"
+            action="/home/deleteWorkout/<%= exercisePost.id %>?_method=DELETE"
             method="POST"
             class="col-3">
                 <button class="btn fa fa-trash" type="submit">Delete</button>
@@ -59,10 +59,9 @@
     </div>
 
     <footer>
-        <p class="text-center mt-20">© 2023 DaveCodes.Tech</p>
-      </footer>
+        <a href="https://www.DaveCodes.Tech"><p class="text-center text-black">©2023 DaveCodes.Tech</p></a>
+    </footer>
       
-      <!-- <script src="/public/js/workout.js"></script> -->
-      <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-      </body>
-      </html>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>

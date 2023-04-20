@@ -11,19 +11,19 @@
 </head>
 <body class="bg-teal-200 box-border h-screen flex flex-col place-items-center place-content-between">
 
-    <nav class="flex w-screen justify-between py-2 px-5">
+    <nav class="flex w-screen justify-between py-2 px-5 text-black">
       
-        <a class="text-lg font-bold" href="/calendar"><h1>SweatMate</h1></a>
+        <a class="text-lg font-bold" href="/home"><h1>SweatMate</h1></a>
   
         <ul class="flex gap-6 list-none font-medium w-72">
-          <li><a href="/calendar">Calendar</a></li>
-          <li><a href="/calendar/createWorkout">Add Workout</a></li>
-          <li><a href="/logout">Logout</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home/createWorkout">Add Workout</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
   
     </nav>
 
-    <form class="m-4 flex flex-col place-items-center w-56 lg:w-60 lg:flex-vertical" action="/calendar/postWorkout" method='POST'>
+    <form class="m-4 flex flex-col place-items-center w-56 lg:w-60 lg:flex-vertical" action="/home/postWorkout" method='POST'>
         <label class="input-group input-group-vertical m-2">
             <span>Date:</span>
             <input type="date" id="date" name="date" required class="input input-bordered">
@@ -48,14 +48,13 @@
             <span>Notes:</span>
             <textarea class="notes input input-bordered" id="notes" name="notes" rows="10" cols="50" placeholder="Notes"></textarea>
         </label>
-        <button class='btn btn-primary mt-10 w-42' action="/calendar/postWorkout">Add Workout</button>
+        <button class='btn btn-primary mt-10 w-42' action="/home/postWorkout">Add Workout</button>
     </form>
 
     <footer>
-        <p class="text-center mt-10">© 2023 DaveCodes.Tech</p>
-      </footer>
+        <a href="https://www.DaveCodes.Tech"><p class="text-center text-black">©2023 DaveCodes.Tech</p></a>
+    </footer>
       
-      <!-- <script src="/public/js/workout.js"></script> -->
-      <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-      </body>
-      </html>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>

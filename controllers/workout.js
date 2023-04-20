@@ -11,7 +11,7 @@ module.exports = {
     getWorkoutPost: async (req, res) => {
             try {
               const exercisePost = await Workout.findById(req.params.id);
-              res.render("workout.ejs", { 
+              res.render("workoutPost.ejs", { 
                 exercisePost: exercisePost, 
                 user: req.user
             });
@@ -21,17 +21,10 @@ module.exports = {
           },
     getWorkouts: async (req,res)=> {
         try{
-            const exercises = await Workout.find({userId:req.user.id});
-            // const exercises = await Workout.find({
-            //     date: dayjs().format('MM/DD/YYYY'),
-            //   });
-            // const { date } = req.query; // Get the date from the request query params
-            // console.log(dayjs(date).format('MM/DD/YYYY'))
-            // const formattedDate = dayjs(date).format('MM/DD/YYYY'); // Format the date in the desired format
-            // const exercises = await Workout.find({
-            //     date: formattedDate,
-            // }); 
-            res.render("calendar.ejs", {
+            const exercises = await Workout.find({
+                date: dayjs().format("MM/DD/YYYY"),
+              });
+            res.render("homepage.ejs", {
                 exercises: exercises, 
                 user: req.user
             });
@@ -39,10 +32,9 @@ module.exports = {
             console.log(err);
         }
     },
-    workouts: async (req,res)=> {
+    filterWorkouts: async (req,res)=> {
         try{
-            const workouts = await Workout.find({ date: dayjs(req.query.date) }); // Filter workouts by the selected date
-            console.log(workouts);
+            const workouts = await Workout.find({ date: dayjs(req.query.date) });
             res.render("workouts.ejs", { 
                 workouts: workouts,
                 user: req.user
@@ -64,7 +56,7 @@ module.exports = {
                 userId: req.user.id
             });
             console.log("Workout has been added!");
-            res.redirect("/calendar");
+            res.redirect("/home");
         }catch(err){
             console.log(err);
         }
@@ -76,9 +68,9 @@ module.exports = {
             // Delete post from db
             await workout.remove({ _id: req.params.id });
             console.log("Deleted Post");
-            res.redirect("/calendar");
+            res.redirect("/home");
         } catch (err) {
-            res.redirect("/calendar");
+            res.redirect("/home");
         }
     },
 };
