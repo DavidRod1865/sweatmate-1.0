@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SweatMate</title>
-    <link href="/public/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-teal-200 box-border h-screen flex flex-col place-items-center place-content-between">
+<body class="bg-[url('../public/img/background.jpg')] bg-no-repeat bg-cover bg-center bg-fixed box-border h-screen flex flex-col place-items-center place-content-between">
 
-    <nav class="flex w-screen justify-between py-2 px-5 text-black">
+    <nav class="flex w-screen justify-between py-2 px-5 text-white">
       
         <a class="text-lg font-bold" href="/home"><h1>Workout Log</h1></a>
   
         <ul class="flex gap-6 list-none font-medium w-72">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/home/createWorkout">Add Workout</a></li>
-          <li><a href="/logout">Logout</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home/createWorkout">Add Workout</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
   
     </nav>
@@ -42,11 +42,11 @@
                     <h3 class="underline font-bold text-xlg tracking-wide">
                         <%= user.userName %> Workouts
                     </h3>
+                    <h2 class="font-bold text-lg"><%= workouts[0].date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }); %></h2>
+                    <h1 class="font-bold text-sm"># of Completed Exercises: <%= workouts.length %></h1>
                 </caption>
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="border text-center">
-                        <th scope="col" class="px-6 py-3">Date</th>
-                        <th scope="col" class="px-6 py-3"># of Exercises</th>
                         <th scope="col" class="px-6 py-3">Exercise</th>
                         <th scope="col" class="px-6 py-3">Sets</th>
                         <th scope="col" class="px-6 py-3">Reps</th>
@@ -56,12 +56,6 @@
             <% for(var i=0; i<workouts.length; i++) {%>
                 <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="px-6 py-3 text-center">
-                        <a href="/home/workouts/post/<%= workouts[i]._id%>"><%= workouts[i].date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }); %></a>
-                    </td>
-                    <td class="px-6 py-3 text-center">
-                        <a><%= workouts.length %></a>
-                    </td>
                     <td class="px-6 py-3 text-center">
                         <a href="/home/workouts/post/<%= workouts[i]._id%>"><%= workouts[i].exercise %></a>
                     </td>
@@ -88,7 +82,7 @@
 </div>
 
 <footer>
-    <a href="https://www.DaveCodes.Tech"><p class="text-center text-black">©2023 DaveCodes.Tech</p></a>
+    <a href="https://www.DaveCodes.Tech"><p class="text-center text-white">©2023 DaveCodes.Tech</p></a>
 </footer>
   
 <script src="/public/js/workout.js"></script>
