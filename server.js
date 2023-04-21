@@ -10,7 +10,8 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const workoutRoutes = require("./routes/workouts");
 const methodOverride = require("method-override");
-const PORT = process.env.MONGOPORT || 3000;
+// eslint-disable-next-line no-undef
+const PORT = process.env.PORT || 3000;
 
 require("dotenv").config({path: "./config/.env"});
 
@@ -20,8 +21,11 @@ require("./config/passport")(passport);
 connectDB();
 
 app.set("view engine", "ejs");
+// eslint-disable-next-line no-undef
 app.use("/public", express.static(__dirname + "/public"));
+// eslint-disable-next-line no-undef
 app.use("/dist", express.static(__dirname + "/dist"));
+// eslint-disable-next-line no-undef
 app.use("/views", express.static(__dirname + "/views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
