@@ -4,7 +4,7 @@ const dayjs = require("dayjs");
 module.exports = {
     createWorkout: (req,res) => {
         if(req.user) {
-            return res.render("createWorkout.ejs");
+            return res.render("createWorkout.ejs"); 
           }
         res.redirect("/login");
       },
